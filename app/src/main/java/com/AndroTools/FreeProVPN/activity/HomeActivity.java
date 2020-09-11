@@ -6,7 +6,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +17,8 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
 
 import com.AndroTools.FreeProVPN.BuildConfig;
 import com.AndroTools.FreeProVPN.R;
@@ -31,6 +32,11 @@ import com.AndroTools.FreeProVPN.util.map.MapCreator;
 import com.AndroTools.FreeProVPN.util.map.MyMarker;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -50,6 +56,7 @@ import java.util.List;
 
 
 public class HomeActivity extends BaseActivity {
+    private AdView mAdView;
 
     private MapView mapView;
 
@@ -70,13 +77,22 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         homeContextRL = (RelativeLayout) findViewById(R.id.homeContextRL);
         countryList = dbHelper.getUniqueCountries();
 
         long totalServ = dbHelper.getCount();
         if (!BuildConfig.DEBUG)
             Answers.getInstance().logCustom(new CustomEvent("Total servers")
-                .putCustomAttribute("Total servers", totalServ));
+                    .putCustomAttribute("Total servers", totalServ));
 
         String totalServers = String.format(getResources().getString(R.string.total_servers), totalServ);
         ((TextView) findViewById(R.id.homeTotalServers)).setText(totalServers);

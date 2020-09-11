@@ -1,7 +1,8 @@
 package com.AndroTools.FreeProVPN.util.map;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
+
+import androidx.core.content.ContextCompat;
 
 import com.AndroTools.FreeProVPN.R;
 import com.AndroTools.FreeProVPN.util.LoadData;

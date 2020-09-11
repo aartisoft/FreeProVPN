@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/serverParentLayout"
@@ -171,17 +172,18 @@
                     android:orientation="horizontal"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp">
-                        <android.support.v7.widget.AppCompatCheckBox
-                            android:id="@+id/serverBlockingCheck"
-                            app:buttonTint="@color/buttonBg"
-                            android:text="@string/blocking_ads"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:visibility="gone"
-                            android:textColor="@android:color/tab_indicator_text"
-                            android:layout_marginEnd="10dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_width="wrap_content"
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/serverBlockingCheck"
+                        app:buttonTint="@color/buttonBg"
+                        android:text="@string/blocking_ads"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        android:textColor="@android:color/tab_indicator_text"
+                        android:layout_marginEnd="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
 
                     <Button
@@ -267,13 +269,22 @@
                 <TextView
                     android:id="@+id/serverTrafficInTotally"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
+
                 <TextView
                     android:id="@+id/serverTrafficOutTotally"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"></com.google.android.gms.ads.AdView>
 </LinearLayout>

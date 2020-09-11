@@ -20,6 +20,11 @@ import com.androidnetworking.interfaces.DownloadProgressListener;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
 import com.daimajia.numberprogressbar.NumberProgressBar;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -29,6 +34,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 
 public class LoaderActivity extends BaseActivity {
+    private AdView mAdView;
 
     private NumberProgressBar progressBar;
     private TextView commentsText;
@@ -56,11 +62,20 @@ public class LoaderActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loader);
 
-        progressBar = (NumberProgressBar)findViewById(R.id.number_progress_bar);
-        commentsText = (TextView)findViewById(R.id.commentsText);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        progressBar = (NumberProgressBar) findViewById(R.id.number_progress_bar);
+        commentsText = (TextView) findViewById(R.id.commentsText);
 
         if (getIntent().getBooleanExtra("firstPremiumLoad", false))
-            ((TextView)findViewById(R.id.loaderPremiumText)).setVisibility(View.VISIBLE);
+            ((TextView) findViewById(R.id.loaderPremiumText)).setVisibility(View.VISIBLE);
 
         progressBar.setMax(100);
 

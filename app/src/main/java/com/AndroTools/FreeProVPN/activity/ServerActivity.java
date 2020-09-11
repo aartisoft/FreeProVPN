@@ -15,8 +15,6 @@ import android.net.VpnService;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Gravity;
@@ -35,6 +33,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+
 import com.AndroTools.FreeProVPN.BuildConfig;
 import com.AndroTools.FreeProVPN.R;
 import com.AndroTools.FreeProVPN.model.Server;
@@ -44,6 +45,11 @@ import com.AndroTools.FreeProVPN.util.Stopwatch;
 import com.AndroTools.FreeProVPN.util.TotalTraffic;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -60,6 +66,7 @@ import de.blinkt.openvpn.core.VPNLaunchHelper;
 import de.blinkt.openvpn.core.VpnStatus;
 
 public class ServerActivity extends BaseActivity {
+    private AdView mAdView;
 
     private static final int START_VPN_PROFILE = 70;
     private BroadcastReceiver br;
@@ -102,6 +109,15 @@ public class ServerActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_server);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         bookmark = (ImageButton) findViewById(R.id.serverBookmark);
         parentLayout = (LinearLayout) findViewById(R.id.serverParentLayout);

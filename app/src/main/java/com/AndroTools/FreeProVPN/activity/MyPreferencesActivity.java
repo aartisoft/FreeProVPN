@@ -5,8 +5,9 @@ import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceFragment;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.AndroTools.FreeProVPN.App;
 import com.AndroTools.FreeProVPN.R;
@@ -14,6 +15,11 @@ import com.AndroTools.FreeProVPN.database.DBHelper;
 import com.AndroTools.FreeProVPN.model.Server;
 import com.AndroTools.FreeProVPN.util.CountriesNames;
 import com.AndroTools.FreeProVPN.util.PropertiesService;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
@@ -24,6 +30,7 @@ import java.util.List;
  */
 
 public class MyPreferencesActivity extends PreferenceActivity {
+    private AdView mAdView;
     private Toolbar toolbar;
     Tracker mTracker;
 
@@ -31,6 +38,16 @@ public class MyPreferencesActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         toolbar = (Toolbar) findViewById(R.id.preferenceToolbar);
         toolbar.setTitle(R.string.app_name);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

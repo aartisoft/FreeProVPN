@@ -11,8 +11,9 @@ import android.net.LocalSocket;
 import android.net.LocalSocketAddress;
 import android.os.Handler;
 import android.os.ParcelFileDescriptor;
-import android.support.annotation.NonNull;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 import com.AndroTools.FreeProVPN.BuildConfig;
 import com.AndroTools.FreeProVPN.R;
