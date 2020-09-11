@@ -7,12 +7,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.vasilkoff.easyvpnfree.activity.ServersListActivity">
+    tools:context="com.AndroTools.FreeProVPN.activity.ServersListActivity">
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/list"
         android:divider="@color/listDivider"
-        android:dividerHeight="1dp"/>
+        android:dividerHeight="1dp" />
 </RelativeLayout>

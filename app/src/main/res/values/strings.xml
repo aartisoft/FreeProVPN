@@ -48,6 +48,7 @@
     <string name="error_random_country">Server with priority country %1$s is not available</string>
     <string name="success_pop_up_title"><b>You are successfuly connected!
         \n Let\'s try it out?</b></string>
+    <string name="success_pop_up_MSG"><b>You are successfully connected.</b></string>
     <string name="open_playmarket">Open PlayMarket</string>
     <string name="open_browser">Open browser</string>
     <string name="show_my_desktop">Show my desktop</string>
@@ -66,7 +67,7 @@
     <string name="traffic_in">Downloaded: %1$s</string>
     <string name="traffic_out">Uploaded: %1$s</string>
     <string name="traffic_totally"><b>Totally through the application</b></string>
-    <string name="rating_title"><b>Thanks for using Easy VPN Free!</b></string>
+    <string name="rating_title"><b>Thanks for using Free Pro VPN!</b></string>
     <string name="rating_sure">Sure</string>
     <string name="rating_not">Not really</string>
     <string name="rating_text">We are trying to make the app better!
@@ -74,9 +75,9 @@
         \nby rating us?
     </string>
     <string name="share_text">
-        Easy VPN Free! Open source, Unlimited and 100% Free!
-        \nMore than 22 countries to connect and unblock all blocked websites.
-        \n\nhttps://play.google.com/store/apps/details?id=com.vasilkoff.easyvpnfree
+        Free Pro VPN! Open source, Unlimited and 100% Free!
+        \nMore than 50 countries to connect and unblock all blocked websites.
+        \n\nhttps://play.google.com/store/apps/details?id=com.AndroTools.FreeProVPN
     </string>
     <string name="bookmarks">Bookmarks</string>
     <string name="bookmark_delete">Delete</string>

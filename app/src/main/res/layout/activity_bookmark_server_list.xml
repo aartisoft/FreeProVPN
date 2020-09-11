@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.vasilkoff.easyvpnfree.activity.BookmarkServerListActivity">
+    tools:context="com.AndroTools.FreeProVPN.activity.BookmarkServerListActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,6 +19,7 @@
         android:paddingTop="10dp"
         android:layout_marginBottom="10dp"
         android:id="@+id/bookmarkTitleLayout">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

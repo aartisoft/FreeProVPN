@@ -9,16 +9,19 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.vasilkoff.easyvpnfree.activity.AboutActivity">
+    tools:context="com.AndroTools.FreeProVPN.activity.AboutActivity">
+
     <TextView
         android:id="@+id/appVersion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:autoLink="web"/>
+        android:autoLink="web" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <TextView
             android:id="@+id/aboutApp"
             android:layout_width="match_parent"

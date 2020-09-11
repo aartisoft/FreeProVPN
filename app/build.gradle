@@ -21,7 +21,7 @@ android {
     flavorDimensions "default"
 
     defaultConfig {
-        applicationId "com.vasilkoff.easyvpnfree"
+        applicationId "com.AndroTools.FreeProVPN"
         minSdkVersion 17
         targetSdkVersion 24
         versionCode 50
@@ -35,21 +35,21 @@ android {
 
     productFlavors {
         free {
-            applicationId "com.vasilkoff.easyvpnfree"
-            resValue "string", "app_name", "Easy VPN Free"
-            resValue "string", "notification_title", "Easy VPN Free - %s"
+            applicationId "com.AndroTools.FreeProVPN"
+            resValue "string", "app_name", "Free Pro VPN"
+            resValue "string", "notification_title", "Free Pro VPN - %s"
         }
 
         pro {
-            applicationId "com.vasilkoff.easyvpn"
-            resValue "string", "app_name", "Easy VPN"
-            resValue "string", "notification_title", "Easy VPN - %s"
+            applicationId "com.AndroTools.ProVPN"
+            resValue "string", "app_name", "Pro VPN"
+            resValue "string", "notification_title", "Pro VPN - %s"
         }
 
         underground {
-            applicationId "com.vasilkoff.easyvpnunderground"
-            resValue "string", "app_name", "Easy VPN"
-            resValue "string", "notification_title", "Easy VPN - %s"
+            applicationId "com.AndroTools.ProVPN"
+            resValue "string", "app_name", "Pro VPN"
+            resValue "string", "notification_title", "Pro VPN - %s"
         }
     }
 

@@ -43,6 +43,7 @@
     <string name="choose_country">Виберіть країну</string>
     <string name="error_random_country">Сервер с пріоритетом країни %1$s не доступний</string>
     <string name="success_pop_up_title"><b>Ви успішно підключені! Давайте спробуємо це?</b></string>
+    <string name="success_pop_up_MSG"><b>Ви успішно підключені.</b></string>
     <string name="open_playmarket">Відкрить PlayMarket</string>
     <string name="open_browser">Відкрить браузер</string>
     <string name="show_my_desktop">Показати ваш рабочий стіл</string>
@@ -53,7 +54,7 @@
     <string name="traffic_in">Завантажено: %1$s</string>
     <string name="traffic_out">Відправлено: %1$s</string>
     <string name="traffic_totally"><b>Всього через додаток</b></string>
-    <string name="rating_title"><b>Дякуємо Вам за використання Easy VPN Free!</b></string>
+    <string name="rating_title"><b>Дякуємо Вам за використання Free Pro VPN!</b></string>
     <string name="rating_sure">Звичайно</string>
     <string name="rating_not">На справді, ні</string>
     <string name="rating_text">Ми намагаємося зробити додаток краще!
@@ -61,8 +62,8 @@
         \nоцінить нас?
     </string>
     <string name="share_text">
-        Easy VPN Free! Відкритий вихідний код, без обмежень і 100% безкоштовний!
-        \nБільше ніж 22 країни для піключення і розблокування всіх заблокований сайтів.
+        Free Pro VPN! Відкритий код, необмежений та 100% безкоштовний!
+        \nПонад 50 країн для підключення та розблокування всіх заблокованих веб-сайтів.
         \n\nhttps://play.google.com/store/apps/details?id=com.vasilkoff.easyvpnfree
     </string>
     <string name="automatic_switching">Автоматичне переключання</string>

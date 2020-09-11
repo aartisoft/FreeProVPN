@@ -27,19 +27,15 @@ import android.os.IBinder;
 import android.os.Message;
 import android.os.ParcelFileDescriptor;
 import android.preference.PreferenceManager;
-
 import android.system.OsConstants;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.vasilkoff.easyvpnfree.BuildConfig;
-
-
-import com.vasilkoff.easyvpnfree.R;
-import com.vasilkoff.easyvpnfree.activity.ServerActivity;
-import com.vasilkoff.easyvpnfree.util.TotalTraffic;
-
+import com.AndroTools.FreeProVPN.BuildConfig;
+import com.AndroTools.FreeProVPN.R;
+import com.AndroTools.FreeProVPN.activity.ServerActivity;
+import com.AndroTools.FreeProVPN.util.TotalTraffic;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -50,7 +46,6 @@ import java.net.UnknownHostException;
 import java.util.Collection;
 import java.util.Locale;
 import java.util.Vector;
-
 
 import de.blinkt.openvpn.VpnProfile;
 import de.blinkt.openvpn.core.VpnStatus.ByteCountListener;

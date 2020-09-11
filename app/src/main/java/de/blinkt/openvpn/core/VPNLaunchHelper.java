@@ -10,7 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
-import com.vasilkoff.easyvpnfree.R;
+import com.AndroTools.FreeProVPN.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Vector;
-
 
 import de.blinkt.openvpn.VpnProfile;
 
@@ -109,7 +108,7 @@ public class VPNLaunchHelper {
 
             FileOutputStream fout = new FileOutputStream(mvpnout);
 
-            byte buf[]= new byte[4096];
+            byte[] buf = new byte[4096];
 
             int lenread = mvpn.read(buf);
             while(lenread> 0) {

@@ -9,7 +9,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -20,7 +19,7 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Base64;
 
-import com.vasilkoff.easyvpnfree.R;
+import com.AndroTools.FreeProVPN.R;
 
 import org.spongycastle.util.io.pem.PemObject;
 import org.spongycastle.util.io.pem.PemWriter;
@@ -695,10 +694,7 @@ public class VpnProfile implements Serializable, Cloneable {
     public static boolean isEmbedded(String data) {
         if (data == null)
             return false;
-        if (data.startsWith(INLINE_TAG) || data.startsWith(DISPLAYNAME_TAG))
-            return true;
-        else
-            return false;
+        return data.startsWith(INLINE_TAG) || data.startsWith(DISPLAYNAME_TAG);
     }
 
     public void checkForRestart(final Context context) {
@@ -958,10 +954,7 @@ public class VpnProfile implements Serializable, Cloneable {
 
         if (data.contains("Proc-Type: 4,ENCRYPTED"))
             return true;
-        else if (data.contains("-----BEGIN ENCRYPTED PRIVATE KEY-----"))
-            return true;
-        else
-            return false;
+        else return data.contains("-----BEGIN ENCRYPTED PRIVATE KEY-----");
     }
 
     public int needUserPWInput(boolean ignoreTransient) {

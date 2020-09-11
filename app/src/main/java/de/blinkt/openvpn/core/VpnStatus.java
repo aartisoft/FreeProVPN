@@ -6,11 +6,10 @@
 package de.blinkt.openvpn.core;
 
 import android.content.Context;
-import android.os.Build;
 import android.os.HandlerThread;
 import android.os.Message;
 
-import com.vasilkoff.easyvpnfree.R;
+import com.AndroTools.FreeProVPN.R;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -36,7 +35,7 @@ public class VpnStatus {
 
     private static int mLastStateresid = R.string.state_noprocess;
 
-    private static long mlastByteCount[] = {0, 0, 0, 0};
+    private static long[] mlastByteCount = {0, 0, 0, 0};
     private static HandlerThread mHandlerThread;
 
     public static void logException(LogLevel ll, String context, Exception e) {

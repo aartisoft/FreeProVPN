@@ -14,8 +14,8 @@ import android.os.ParcelFileDescriptor;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.vasilkoff.easyvpnfree.BuildConfig;
-import com.vasilkoff.easyvpnfree.R;
+import com.AndroTools.FreeProVPN.BuildConfig;
+import com.AndroTools.FreeProVPN.R;
 
 import junit.framework.Assert;
 
@@ -26,12 +26,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Locale;
 import java.util.Vector;
-
 
 import de.blinkt.openvpn.VpnProfile;
 import de.blinkt.openvpn.core.VpnStatus.ConnectionStatus;
@@ -157,7 +157,7 @@ public class OpenVpnManagementThread implements Runnable, OpenVPNManagement {
                     Collections.addAll(mFDList, fds);
                 }
 
-                String input = new String(buffer, 0, numbytesread, "UTF-8");
+                String input = new String(buffer, 0, numbytesread, StandardCharsets.UTF_8);
 
                 pendingInput += input;
 

@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/homeContextRL"
+<RelativeLayout android:id="@+id/homeContextRL"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vasilkoff.easyvpnfree.activity.HomeActivity">
+    tools:context="com.AndroTools.FreeProVPN.activity.HomeActivity">
 
     <LinearLayout
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
-    </LinearLayout>
+        android:orientation="horizontal"></LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

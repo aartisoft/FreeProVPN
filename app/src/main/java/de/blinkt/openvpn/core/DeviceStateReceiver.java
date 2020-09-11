@@ -15,13 +15,11 @@ import android.net.NetworkInfo.State;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 
-
-import com.vasilkoff.easyvpnfree.R;
-
-import de.blinkt.openvpn.core.VpnStatus.ByteCountListener;
+import com.AndroTools.FreeProVPN.R;
 
 import java.util.LinkedList;
-import java.util.Objects;
+
+import de.blinkt.openvpn.core.VpnStatus.ByteCountListener;
 
 import static de.blinkt.openvpn.core.OpenVPNManagement.pauseReason;
 
@@ -219,13 +217,9 @@ public class DeviceStateReceiver extends BroadcastReceiver implements ByteCountL
             network = connectState.SHOULDBECONNECTED;
 
             boolean sameNetwork;
-            if (lastConnectedNetwork == null
-                    || lastConnectedNetwork.getType() != networkInfo.getType()
-                    || !equalsObj(lastConnectedNetwork.getExtraInfo(), networkInfo.getExtraInfo())
-                    )
-                sameNetwork = false;
-            else
-                sameNetwork = true;
+            sameNetwork = lastConnectedNetwork != null
+                    && lastConnectedNetwork.getType() == networkInfo.getType()
+                    && equalsObj(lastConnectedNetwork.getExtraInfo(), networkInfo.getExtraInfo());
 
             /* Same network, connection still 'established' */
             if (pendingDisconnect && sameNetwork) {
