@@ -959,8 +959,8 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
             }
 
 
-            showNotification(VpnStatus.getLastCleanLogMessage(this),
-                    msg, lowpriority, 0, level);
+            /*showNotification(VpnStatus.getLastCleanLogMessage(this),
+                    msg, lowpriority, 0, level);*/
 
         }
     }
@@ -984,7 +984,7 @@ public class OpenVPNService extends VpnService implements StateListener, Callbac
                     humanReadableByteCount(diffOut / OpenVPNManagement.mBytecountInterval, true));
 
             boolean lowpriority = !mNotificationAlwaysVisible;
-            showNotification(netstat, null, lowpriority, mConnecttime, LEVEL_CONNECTED);
+            //showNotification(netstat, null, lowpriority, mConnecttime, LEVEL_CONNECTED);
         }
 
 
